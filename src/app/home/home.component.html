@@ -1,0 +1,10 @@
+<div *ngFor="let exercise of exercises" class="row mb-4">
+    <div class="col">
+        <div>
+            <a [routerLink]="[exercise.route]">{{exercise.name}}</a>
+        </div>
+        <span class="badge rounded-pill bg-secondary text-light mr-2 pl-2 pr-2" *ngFor="let label of exercise.labels">
+            {{label}}
+        </span>
+    </div>
+</div>

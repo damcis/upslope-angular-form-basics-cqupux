@@ -1,0 +1,19 @@
+<ul ngbNav #nav="ngbNav" class="nav-tabs mb-5 justify-content-center">
+    <li ngbNavItem>
+        <a ngbNavLink>The Code</a>
+        <ng-template ngbNavContent>
+            <router-outlet></router-outlet>
+        </ng-template>
+    </li>
+    <li ngbNavItem>
+        <a ngbNavLink>The Wireframe</a>
+        <ng-template ngbNavContent>
+            <div>
+                <markdown [src]="'/assets/' + exercise.route + '.md'" lineNumbers ngPreserveWhitespaces lineHighlight>
+                </markdown>
+                <img [src]="'/assets/' + exercise.route + '.svg'" [alt]="exercise.name + ' Wireframe'" />
+            </div>
+        </ng-template>
+    </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>
